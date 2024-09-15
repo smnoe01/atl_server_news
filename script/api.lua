@@ -1,3 +1,5 @@
+local S = minetest.get_translator("atl_server_news")
+
 function atl_server_news.ensure_news_file_exists()
     if atl_server_news.mod_storage:get_string("news_content") == "" then
         atl_server_news.mod_storage:set_string("news_content", "")
@@ -29,7 +31,7 @@ function atl_server_news.set_news_read(player_name)
 end
 
 function atl_server_news.send_news_notification(player_name)
-    minetest.chat_send_player(player_name, "-!- There are new features on the server! Type /news to read them.")
+    minetest.chat_send_player(player_name, S("-!- There are new features on the server! Type /news to read them."))
 end
 
 function atl_server_news.notify_new_news(player_name)
