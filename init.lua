@@ -1,6 +1,6 @@
 atl_server_news = {}
 atl_server_news.modpath = minetest.get_modpath("atl_server_news")
-atl_server_news.news_file_path = minetest.get_worldpath() .. "/server_news.txt"
+atl_server_news.mod_storage = minetest.get_mod_storage()
 
 function atl_server_news.load_file(path)
     local status, err = pcall(dofile, path)
@@ -18,10 +18,10 @@ if atl_server_news.modpath then
         "script/commands.lua",
         "script/interface.lua",
     }
+
     for _, file in ipairs(files_to_load) do
         atl_server_news.load_file(atl_server_news.modpath .. "/" .. file)
     end
 else
     minetest.log("error", "-!- Files in " .. atl_server_news.modpath .. " mod are not set or valid.")
 end
-

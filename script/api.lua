@@ -1,36 +1,14 @@
-function atl_server_news.open_file(path, mode)
-    local file = io.open(path, mode)
-    if not file then
-        minetest.log("error", "Impossible to open file: " .. path)
-    end
-    return file
-end
-
 function atl_server_news.ensure_news_file_exists()
-    local file = atl_server_news.open_file(atl_server_news.news_file_path, "r")
-    if not file then
-        file = atl_server_news.open_file(atl_server_news.news_file_path, "w")
-        if file then
-            file:write("")
-            file:close()
-            minetest.log("action", "Created news.txt file.")
-        else
-            minetest.log("error", "Impossible to create news.txt file.")
-        end
+    if atl_server_news.mod_storage:get_string("news_content") == "" then
+        atl_server_news.mod_storage:set_string("news_content", "")
+        minetest.log("action", "Created news content in mod_storage.")
     else
-        file:close()
-        minetest.log("action", "news.txt file already exists.")
+        minetest.log("action", "News content already exists in mod_storage.")
     end
 end
 
 function atl_server_news.read_news_file()
-    local file = atl_server_news.open_file(atl_server_news.news_file_path, "r")
-    if not file then
-        return ""
-    end
-    local content = file:read("*all")
-    file:close()
-    return content
+    return atl_server_news.mod_storage:get_string("news_content")
 end
 
 function atl_server_news.has_read_news(player_name)
@@ -62,17 +40,11 @@ end
 
 function atl_server_news.save_news(content)
     if not content then
-        minetest.log("error", "Content is nil. Cannot save news.txt file.")
+        minetest.log("error", "Content is nil. Cannot save news content.")
         return
     end
-    local file = atl_server_news.open_file(atl_server_news.news_file_path, "w")
-    if file then
-        file:write(content)
-        file:close()
-        minetest.log("action", "Saved news.txt file.")
-    else
-        minetest.log("error", "Impossible to save news.txt file.")
-    end
+    atl_server_news.mod_storage:set_string("news_content", content)
+    minetest.log("action", "Saved news content in mod_storage.")
 end
 
 function atl_server_news.init()
