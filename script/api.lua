@@ -13,11 +13,13 @@ function atl_server_news.ensure_news_file_exists()
         if file then
             file:write("")
             file:close()
+            minetest.log("action", "Created news.txt file.")
         else
             minetest.log("error", "Impossible to create news.txt file.")
         end
     else
         file:close()
+        minetest.log("action", "news.txt file already exists.")
     end
 end
 
@@ -59,10 +61,15 @@ function atl_server_news.notify_new_news(player_name)
 end
 
 function atl_server_news.save_news(content)
+    if not content then
+        minetest.log("error", "Content is nil. Cannot save news.txt file.")
+        return
+    end
     local file = atl_server_news.open_file(atl_server_news.news_file_path, "w")
     if file then
         file:write(content)
         file:close()
+        minetest.log("action", "Saved news.txt file.")
     else
         minetest.log("error", "Impossible to save news.txt file.")
     end
@@ -71,10 +78,5 @@ end
 function atl_server_news.init()
     atl_server_news.ensure_news_file_exists()
 end
-
-minetest.register_on_joinplayer(function(player)
-    local player_name = player:get_player_name()
-    atl_server_news.notify_new_news(player_name)
-end)
 
 atl_server_news.init()
