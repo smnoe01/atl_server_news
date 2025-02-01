@@ -1,3 +1,16 @@
+# Server News
+
+A mod that allows you to tell your player what's new on the server.
+
+## Installation
+1. Download the mod.
+2. Place the folder in your Minetest `mods` directory.
+3. Enable the mod in your world.
+
+## Features
+- Edit your own server news
+- Personalise your messages
+
 ## #1. Bold Text
 #<b> This text will be in bold </b>
 
