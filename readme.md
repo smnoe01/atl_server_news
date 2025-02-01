@@ -11,20 +11,21 @@ A mod that allows you to tell your player what's new on the server.
 - Edit your own server news
 - Personalise your messages
 
-## #1. Bold Text
-#<b> This text will be in bold </b>
+## How to personalise
+### #1. Bold Text
+- #<b> This text will be in bold </b>
 
-## #2. Text Underlined
-#<style size=22> This text will be bigger </style> 
+### #2. Text Underlined
+- #<style size=22> This text will be bigger </style> 
 
-## #3. Text Underlined
-#<u> This text will be underlined </u>
+### #3. Text Underlined
+- #<u> This text will be underlined </u>
 
-## #4. Text in Italic
-#<i> This text will be in italics </i>
+### #4. Text in Italic
+- #<i> This text will be in italics </i>
 
-## #5. Colored Text
-#<style color=#32bc39> This text will be green in color </style>
+### #5. Colored Text
+- #<style color=#32bc39> This text will be green in color </style>
 
 ## Commands
 | Command                                       | Description                                                                             |
