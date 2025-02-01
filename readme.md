@@ -27,7 +27,7 @@ A mod that allows you to tell your player what's new on the server.
 ### #5. Colored Text
 - **`<style color=#32bc39>`** This text will be green in color **`</style>`**
 
-![Screenshot]()
+![alt text](screenshot.png)
 
 ## Commands
 | Command                                       | Description                                                                             |
