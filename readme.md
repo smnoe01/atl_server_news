@@ -13,19 +13,19 @@ A mod that allows you to tell your player what's new on the server.
 
 ## How to personalise
 ### #1. Bold Text
-- `<b> This text will be in bold </b>`
+- **`<b>`** This text will be in bold **`</b>`**
 
 ### #2. Text Underlined
-- `<style size=22> This text will be bigger </style> `
+- **`<style size=22>`** This text will be bigger **`</style>`**
 
 ### #3. Text Underlined
-- `<u> This text will be underlined </u>`
+- **`<u>`** This text will be underlined **`</u>`**
 
 ### #4. Text in Italic
-- `<i> This text will be in italics </i>`
+- **`<i>`** This text will be in italics **`</i>`**
 
 ### #5. Colored Text
-- `<style color=#32bc39> This text will be green in color </style>`
+- **`<style color=#32bc39>`** This text will be green in color **`</style>`**
 
 ## Commands
 | Command                                       | Description                                                                             |
