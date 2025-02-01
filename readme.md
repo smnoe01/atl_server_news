@@ -1,16 +1,16 @@
-#1. Bold Text
+## #1. Bold Text
 #<b> This text will be in bold </b>
 
-#2. Text Underlined
+## #2. Text Underlined
 #<style size=22> This text will be bigger </style> 
 
-#3. Text Underlined
+## #3. Text Underlined
 #<u> This text will be underlined </u>
 
-#4. Text in Italic
+## #4. Text in Italic
 #<i> This text will be in italics </i>
 
-#5. Colored Text
+## #5. Colored Text
 #<style color=#32bc39> This text will be green in color </style>
 
 ## Commands
