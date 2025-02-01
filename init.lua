@@ -81,7 +81,7 @@ function atl_server_news.show_news_form(player_name)
     atl_server_news.ensure_news_file_exists()
     local news_content = atl_server_news.read_news_file()
     local formspec = "size[6,8]" ..
-                     "tabheader[0,0;tabs_news;Server News,Edit News (Admin Only);1;false;false]" ..
+                     "tabheader[0,0;tabs_news;Server News,Edit server news;1;false;false]" ..
                      "box[0,0;5.80,8.1;#000000]" ..
                      "hypertext[0.5,0.15;5.5,8.65;news;<style size=16>" .. minetest.formspec_escape(news_content) .. "</style>]"
     minetest.show_formspec(player_name, "server_news", formspec)
@@ -91,7 +91,7 @@ end
 function atl_server_news.show_edit_news_form(player_name)
     local news_content = atl_server_news.read_news_file()
     local formspec = "size[6,8]" ..
-                     "tabheader[0,0;tabs_news;Server News,Edit News (Admin Only);2;false;false]" ..
+                     "tabheader[0,0;tabs_news;Server News,Edit server news;2;false;false]" ..
                      "textarea[0.5,0.5;5.5,7.5;news_content;Edit News:;" .. news_content .. "]" ..
                      "button[2,7;2,1;save;Save]"
     minetest.show_formspec(player_name, "server_news_edit", formspec)
@@ -128,7 +128,7 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
         atl_server_news.save_news(fields.news_content)
         minetest.chat_send_player(player:get_player_name(), S("[ ! ] Server news updated successfully."))
     end
-    if fields.tabs_news == "2" then
+    if fields.tabs_news == "2" then -- Tab: Edit New (Admin Only)
         if minetest.check_player_privs(player, {server = true}) then
             atl_server_news.show_edit_news_form(player:get_player_name())
         else
@@ -136,7 +136,7 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
             minetest.chat_send_player(player:get_player_name(), S("[ ! ] You don't have permission to open this (missing privileges: server)"))
         end
     end
-    if fields.tabs_news == "1" and minetest.check_player_privs(player, {server = true}) then
+    if fields.tabs_news == "1" and minetest.check_player_privs(player, {server = true}) then -- Tab: News
         atl_server_news.show_news_form(player:get_player_name())
     end
 end)
