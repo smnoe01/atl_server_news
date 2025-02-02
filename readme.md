@@ -1,4 +1,6 @@
 # Server News
+[![ContentDB](https://content.luanti.org/packages/Atlante/atl_server_news/shields/downloads/)](https://content.luanti.org/packages/Atlante/atl_server_news/)
+
 
 A mod that allows you to tell your player what's new on the server.
 
