@@ -73,7 +73,7 @@ local function show_news_form(name)
     local formspec = "size[7,9]" ..
                      "tabheader[0,0;tabs;" .. tabs .. ";1;false;false]" ..
                      "box[0,0;6.8,8.75;#000000]" ..
-                     "hypertext[0.5,0.15;5.5,8.65;content;<style size=16>" .. news .. "</style>]" ..
+                     "hypertext[0.5,0.15;6.6,9.5;content;<style size=16>" .. news .. "</style>]" ..
                      "label[0,8.8;Players who have seen the recent news " .. count .. "]"
     core.show_formspec(name, "atl_news", formspec)
 end
